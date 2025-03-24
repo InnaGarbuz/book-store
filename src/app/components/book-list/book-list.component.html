@@ -1,0 +1,51 @@
+<div class="book-store">
+  <div class="book-store__add-book">
+    <button class="btn btn__add" (click)="onAddNewBook()">Add New Book</button>
+  </div>
+  <h2 class="book-store__title">Book List</h2>
+  <ul class="book-list">
+    <li *ngFor="let book of books$ | async" class="book-list__item">
+      <div class="book-list__img">
+        <div *ngIf="imagePreview" class="image-preview">
+          <img [src]="book?.image || imagePreview" alt="Book Image Preview" />
+        </div>
+
+<!--        <div *ngIf="book?.image && !imagePreview" class="image-preview">-->
+<!--          <img [src]="book?.image" alt="Book Image" />-->
+<!--        </div>-->
+      </div>
+      <div class="book-list__info">
+        <span class="book-title">{{ book.title }}</span>
+        <span class="book-author">by {{ book.author }} ({{ book.year }})</span>
+      </div>
+      <div class="book-list__buttons">
+        <button class="btn btn__add" (click)="onBookClick(book)">More</button>
+        <button class="btn btn__edit " (click)="onEdit(book)">Edit</button>
+        <button class="btn btn__delete" (click)="onDelete(book.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Modal Popup -->
+  <div class="modal" *ngIf="selectedBook" (click)="closeModal()">
+    <div class="modal__content" (click)="$event.stopPropagation()">
+      <button class="btn btn__close" (click)="closeModal()">x</button>
+      <h3 class="modal__title">{{ selectedBook.title }}</h3>
+      <div *ngIf="selectedBook.image" class="modal__img">
+        <img [src]="selectedBook.image" alt="Book Image" />
+      </div>
+      <div class="modal__text">
+        <p><strong>Author:</strong> {{ selectedBook.author }}</p>
+        <p><strong>Year:</strong> {{ selectedBook.year }}</p>
+        <p><strong>Description:</strong> {{ selectedBook.description }}</p>
+      </div>
+
+      <div class="modal__button">
+        <button class="btn btn__edit" (click)="onEdit(selectedBook)">Edit</button>
+        <button class="btn btn__delete" (click)="onDelete(selectedBook.id)">Delete</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>

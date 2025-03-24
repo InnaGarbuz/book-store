@@ -1,0 +1,59 @@
+<div class="modal-overlay">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="btn btn__close" (click)="closeModal()">x</button>
+    <form [formGroup]="bookForm"
+          (ngSubmit)="onSubmit()"
+          class="book-form">
+      <h3 class="book-form__title">{{ book?.id ? 'Edit Book' : 'Add New Book' }}</h3>
+      <div class="book-form__input">
+        <div class="book-form__item">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" formControlName="title" type="text" placeholder="Enter book title" />
+          </div>
+
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input id="author" formControlName="author" type="text" placeholder="Enter author name" />
+          </div>
+
+          <div class="form-group">
+            <label for="year">Year</label>
+            <input id="year" formControlName="year" type="number" placeholder="Enter year of publication" />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" formControlName="description" placeholder="Enter book description"></textarea>
+          </div>
+        </div>
+
+        <div class="book-form__item">
+          <div class="form-group">
+            <label for="image">Book image</label>
+
+            <!-- Кастомна кнопка для вибору файлу -->
+            <label for="image" class="custom-file-upload">
+              Choose Image
+            </label>
+            <input type="file" id="image" (change)="onImageChange($event)" />
+
+            <div *ngIf="imagePreview" class="image-preview">
+              <img [src]="imagePreview" alt="Book Image Preview" />
+            </div>
+
+            <div *ngIf="book?.image && !imagePreview" class="image-preview">
+              <img [src]="book?.image" alt="Book Image" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="book-form__button form-group">
+        <button type="submit" [disabled]="bookForm.invalid" class="btn btn__safe">
+          {{ book?.id ? 'Save Changes' : 'Add Book' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

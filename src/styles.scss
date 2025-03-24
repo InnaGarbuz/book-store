@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+$color_1: #333;
+$color_2: #555;
+$background-color_1: rgba(0, 0, 0, 0.5);
+$background-color_2: white;
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $background-color_1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  &__content {
+    background-color: $background-color_2;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  &__title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: $color_1;
+  }
+  &__img {
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 4px;
+    img {
+      width: 130px;
+      margin: 0 auto;
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    .btn {
+      max-width: 100%;
+    }
+  }
+}
+
+
+
+.btn {
+  max-width: 120px;
+  width: 100%;
+  padding: 8px 12px;
+  margin: 0 3px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+  display: inline-block;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  &__edit{
+    background: #5ddd52;
+    &:hover {
+      border: 2px solid #5ddd52;
+      color: #5ddd52;
+      background: #fff;
+    }
+  }
+  &__safe{
+    background: #34d22f;
+    max-width: 180px;
+    &:hover {
+      border: 2px solid #34d22f;
+      color: #34d22f;
+      background: #fff;
+    }
+  }
+  &__delete {
+    background: #ef3535;
+    &:hover {
+      border: 2px solid #ef3535;
+      color: #ef3535;
+      background: #fff;
+    }
+  }
+  &__add {
+    background: #0799f5;
+    &:hover {
+      border: 2px solid #0799f5;
+      color: #0799f5;
+      background: #fff;
+    }
+  }
+
+  &__close {
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 13px;
+    padding: 0;
+    background: #ef3535;
+  }
+}
