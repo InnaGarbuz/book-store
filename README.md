@@ -74,6 +74,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Contact
 
 If you have any questions or suggestions for improving the app, feel free to reach out!
+My email is inna.harbuz.work@gmail.com or inna.garbuz.1996@gmail.com
 
 ___
 
