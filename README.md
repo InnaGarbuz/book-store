@@ -1,8 +1,8 @@
-# BookApp
+# Book Store
 
 ## Description
 
-This Book Apps application is designed for viewing, adding, editing, and deleting books. Users can add book details such as title, description, author, year and image. By default, 5 books are pre-added to the app, which can be edited or deleted. Newly added books are not saved in the current version, but this functionality will be implemented in future updates.
+This Book Store application is designed for viewing, adding, editing, and deleting books. Users can add book details such as title, description, author, year and image. By default, 5 books are pre-added to the app, which can be edited or deleted. Newly added books are not saved in the current version, but this functionality will be implemented in future updates.
 
 ## Features
 
