@@ -50,7 +50,7 @@ This Book Store application is designed for viewing, adding, editing, and deleti
 
 1. When the app starts, you will see a list of 5 pre-added books.
 
-2. To add a new book, click the "Add Book" button. In the modal window, enter the title, description, and upload an image.
+2. To add a new book, click the "Add Book" button. In the modal window, enter the title, description, author, year and upload an image.
 
 3. To edit a book, click on it and select "Edit".
 
